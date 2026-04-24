@@ -1,0 +1,11 @@
+resources:
+  pipelines:
+    dltdemo_pipeline:
+      name: dltdemo_pipeline
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+
+      libraries:
+        - glob:
+            include: ../src/pipelines/**

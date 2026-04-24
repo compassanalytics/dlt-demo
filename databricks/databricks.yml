@@ -1,0 +1,23 @@
+bundle:
+  name: dltdemo
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: Unity Catalog catalog name (sandbox — verified via catalogs list)
+    default: sandbox
+  schema:
+    description: Schema within catalog
+    default: dltdemo
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-34be68e4-80e5.cloud.databricks.com
+    variables:
+      catalog: sandbox
+      schema: dltdemo

@@ -1,0 +1,6 @@
+# artifacts/ — ephemeral dry-run timing data and snapshots
+artifacts/
+
+# Local-only tooling state
+.analytics/
+.tdd/
