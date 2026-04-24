@@ -21,6 +21,16 @@ This is the **nested agentic loop** — outer TDD loop drives inner pipeline-run
 
 ---
 
+## Three demo modes — pick one for the room
+
+| Mode | When to use | What you type |
+|------|-------------|---------------|
+| **Walkthrough** (manual) | Engineering audiences who want to *see Claude reason* through each step | Verbatim prompts from [`docs/RUNBOOK.md`](docs/RUNBOOK.md) |
+| **Guided** (slash commands) | Mixed audiences; non-author presenters; the boss running solo | `/demo-init` → `/ingest-jira` → `/ingest-docs` → `/build-pipeline` → `/verify` |
+| **Auto** (one-shot, headless) | Pitch demos for non-technical clients; "set it and watch it run" | `bash scripts/demo-auto.sh` *(coming next — see `.claude-plans/three-tier-presenter-flow.md`)* |
+
+Each mode lands the same payoff (diamond DAG in Databricks UI). Pick by audience and your tolerance for surprise.
+
 ## Presenter quick-start
 
 > Full beat-by-beat script with timings and fallbacks: **[`docs/RUNBOOK.md`](docs/RUNBOOK.md)** ← read this before presenting.
