@@ -27,7 +27,7 @@ This is the **nested agentic loop** — outer TDD loop drives inner pipeline-run
 |------|-------------|---------------|
 | **Walkthrough** (manual) | Engineering audiences who want to *see Claude reason* through each step | Verbatim prompts from [`docs/RUNBOOK.md`](docs/RUNBOOK.md) |
 | **Guided** (slash commands) | Mixed audiences; non-author presenters; the boss running solo | `/demo-init` → `/ingest-jira` → `/ingest-docs` → `/build-pipeline` → `/verify` |
-| **Auto** (one-shot, headless) | Pitch demos for non-technical clients; "set it and watch it run" | `bash scripts/demo-auto.sh` *(coming next — see `.claude-plans/three-tier-presenter-flow.md`)* |
+| **Auto** (one-shot, headless) | Pitch demos for non-technical clients; "set it and watch it run" | `bash scripts/demo-auto.sh` |
 
 Each mode lands the same payoff (diamond DAG in Databricks UI). Pick by audience and your tolerance for surprise.
 
@@ -72,6 +72,18 @@ bash scripts/seed-jira.sh      # idempotent — populates DLTDEMO project
 ```bash
 bash scripts/reset-demo.sh     # tears Jira, .tdd/, pipeline, schema back to clean baseline
 ```
+
+### Auto mode (one command, headless)
+
+```bash
+bash scripts/demo-auto.sh                 # full happy-path run
+bash scripts/demo-auto.sh --hard-mode     # fail-and-recover storyline
+```
+
+Drives the entire demo via `claude --print --permission-mode acceptEdits`.
+Bash handles preflight + final assertion; Claude handles the four demo phases
+in between. Transcript written to `artifacts/demo-auto-<timestamp>.log` for
+post-run review. See `bash scripts/demo-auto.sh --help` for all flags.
 
 ### Optional: `--hard-mode` (failure + recovery storyline)
 

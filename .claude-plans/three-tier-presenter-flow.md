@@ -1,6 +1,6 @@
 # Scoping: Three-Tier Presenter Flow
 
-**Status:** scoping / not started
+**Status:** Tier 2 shipped (PR #2 merged); Tier 3 implemented (this PR)
 **Author:** julien.hovan + Claude
 **Date:** 2026-04-24
 **Source ask:** Provide three escalating ways to run the demo — fully manual w/ guide, slash-command-driven, fully autonomous one-shot.
